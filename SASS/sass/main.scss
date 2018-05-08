@@ -1,0 +1,193 @@
+
+$color-primary:#7ed56f;
+$color-primary-light:#55c57a;
+$color-primary-dark:#28b485;
+$color-grey-dark:#777;
+$color-white:#fff;
+
+
+
+
+*, 
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; 
+    /* root-font size 
+    브라우저 기본 폰트값 16를 기준으로 내가 원하는 값이 나오는 퍼센트로 표기(이 경우 10px)
+    */
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight:  400;
+    line-height: 1.7;
+    color:$color-grey-dark;
+    padding: 3rem;
+    box-sizing: border-box; /*box 사이즈를 마진을 제외한 나머지로 정의
+    universal 선택자에 box 사이즈가 상속되도록 정의해야함
+    */
+}
+
+.header{
+    height:95vh;
+    background-image: linear-gradient(to right bottom,rgba($color-primary, 0.8),rgba($color-primary-dark, 0.8)),url(../img/hero.jpg);
+    background-size: cover; /*div의 크기에 맞춰 이미지 변경*/
+    background-position: center;/*이미지 크기가 변경될때 해당 방향을 고정으로 줄어듦*/
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+    position: relative;
+ /*왼쪽 상단에서부터 시계방향*/
+}
+
+.header__logo-box{
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.header__logo{
+    height: 3.5rem;
+}
+
+.header__text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    text-align: center;
+    /* 해당 오브젝트의 가로 세로의 비율대로 움직임 */
+}
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    /* 3d 변형시 뒷면을 보이지 않게 함, animation 적용시 원치않는 흔들림을 방지하기 위함 */
+    margin-bottom: 6rem;
+}
+
+.heading-primary--main{
+    display:block;
+    font-size: 6rem;
+    font-weight:400;
+    letter-spacing:  3.5rem;
+    animation: moveInLeft 1s ease-in-out;
+}
+
+.heading-primary--sub{
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-in-out;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    80%{
+        transform: translateX(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+
+    80%{
+        transform: translateX(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(5rem);
+    }
+
+    80%{
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn:link, 
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    /* 상위 선언에 transition을 지정해야 animation이 적용된다*/
+    position: relative;
+    font-size:1.6rem;
+}
+
+.btn:hover{
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.3rem);
+}
+
+.btn:active{
+    transform: translateY(-0.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn--white{
+    background-color: $color-white;
+    color:$color-grey-dark;
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition: all .4s
+}
+
+.btn--white::after{
+    background-color:$color-white;
+}
+
+.btn:hover::after{
+    transform: scale(1.5, 1.7);
+    opacity:0;
+}
+
+.btn--animated{
+    animation: moveInBottom .5s ease-in-out .5s;
+    animation-fill-mode: backwards;
+    /* animation이 시작하기 전까지 opacity를 0으로 유지함 */
+}
