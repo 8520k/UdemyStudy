@@ -13,64 +13,7 @@ html {
     */ }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box;
-  /*box 사이즈를 마진을 제외한 나머지로 정의
-    universal 선택자에 box 사이즈가 상속되도록 정의해야함
-    */ }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  /*div의 크기에 맞춰 이미지 변경*/
-  background-position: center;
-  /*이미지 크기가 변경될때 해당 방향을 고정으로 줄어듦*/
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
-  position: relative;
-  /*왼쪽 상단에서부터 시계방향*/ }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  /* 해당 오브젝트의 가로 세로의 비율대로 움직임 */ }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /* 3d 변형시 뒷면을 보이지 않게 함, animation 적용시 원치않는 흔들림을 방지하기 위함 */
-  margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 1s ease-in-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-in-out; }
+  padding: 3rem; }
 
 @keyframes moveInLeft {
   0% {
@@ -102,8 +45,47 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
-.btn:link,
-.btn:visited {
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  box-sizing: border-box;
+  /*box 사이즈를 마진을 제외한 나머지로 정의
+    universal 선택자에 box 사이즈가 상속되도록 정의해야함
+    */ }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* 3d 변형시 뒷면을 보이지 않게 함, animation 적용시 원치않는 흔들림을 방지하기 위함 */
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-in-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-in-out; }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn--animated {
+  animation: moveInBottom .5s ease-in-out .5s;
+  animation-fill-mode: backwards;
+  /* animation이 시작하기 전까지 opacity를 0으로 유지함 */ }
+
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -115,16 +97,15 @@ body {
   font-size: 1.6rem; }
 
 .btn:hover {
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.2);
   transform: translateY(-0.3rem); }
+  .btn:hover::after {
+    transform: scale(1.5, 1.7);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
+  box-shadow: 0 0.5rem 1rem rgba(51, 51, 51, 0.2); }
 
 .btn::after {
   content: "";
@@ -138,14 +119,56 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-.btn--white::after {
-  background-color: #fff; }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /*div의 크기에 맞춰 이미지 변경*/
+  background-position: center;
+  /*이미지 크기가 변경될때 해당 방향을 고정으로 줄어듦*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0% 100%);
+  /*왼쪽 상단에서부터 시계방향*/
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* 해당 오브젝트의 가로 세로의 비율대로 움직임 */ }
 
-.btn:hover::after {
-  transform: scale(1.5, 1.7);
-  opacity: 0; }
-
-.btn--animated {
-  animation: moveInBottom .5s ease-in-out .5s;
-  animation-fill-mode: backwards;
-  /* animation이 시작하기 전까지 opacity를 0으로 유지함 */ }
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row [class^="col-"] {
+    height: 6rem;
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) /2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) /3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) /4); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) /3) + 6rem); }
+  .row .col-2-of-4 {
+    width: calc(2 * ((100% - 3 * 6rem) /4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 * ((100% - 3 * 6rem) /4) + 2 * 6rem); }

@@ -1,0 +1,19 @@
+
+*, 
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; 
+    /* root-font size 
+    브라우저 기본 폰트값 16를 기준으로 내가 원하는 값이 나오는 퍼센트로 표기(이 경우 10px)
+    */
+}
+
+body{
+    padding: 3rem;
+}

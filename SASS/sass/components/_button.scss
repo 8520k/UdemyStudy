@@ -1,0 +1,59 @@
+
+.btn{
+    
+    &--white{
+    background-color: $color-white;
+    color:$color-grey-dark;
+        &::after{
+            background-color:$color-white;
+        }
+    }
+
+    &--animated{
+        animation: moveInBottom .5s ease-in-out .5s;
+        animation-fill-mode: backwards;
+        /* animation이 시작하기 전까지 opacity를 0으로 유지함 */
+    }
+
+    &:link, 
+    &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        /* 상위 선언에 transition을 지정해야 animation이 적용된다*/
+        position: relative;
+        font-size:1.6rem;
+    }
+
+    &:hover{
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+        transform: translateY(-0.3rem);
+            &::after{
+            transform: scale(1.5, 1.7);
+            opacity:0;
+            }
+    }
+
+    &:active{
+        transform: translateY(-0.1rem);
+        box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+    }
+
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+        transition: all .4s
+    }
+
+}
+
