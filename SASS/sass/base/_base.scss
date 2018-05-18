@@ -8,12 +8,37 @@
 }
 
 html{
-    font-size: 62.5%; 
-    /* root-font size 
-    브라우저 기본 폰트값 16를 기준으로 내가 원하는 값이 나오는 퍼센트로 표기(이 경우 10px)
-    */
+    font-size: 62.5%; //1rem = 10px; 10px/16px = 62.5%
+    /* root-font size*/
+
+    @include respond(tab-land){
+        font-size: 56.25%; 
+    }
+    
+    @include respond(tab-port){
+        font-size: 50%; //1rem = 8px
+    }
+
+    @include respond(big-desktop){
+        font-size: 75%;
+    }
+
 }
 
 body{
+    
     padding: 3rem;
+    box-sizing: border-box;
+
+    @include respond(tab-port){
+        padding:0;
+    }
+
+
+}
+
+
+::selection{
+    background-color: $color-primary;
+    color: $color-white;
 }

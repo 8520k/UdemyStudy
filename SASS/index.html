@@ -7,7 +7,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/icon-font.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
@@ -29,11 +28,26 @@
 
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natous</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benefit</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular tours</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
-                <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span>01</span>About Natous</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span>02</span>Your benefit</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span>03</span>Popular tours</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span>04</span>Stories</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#" class="navigation__link">
+                        <span>05</span>Book now</a>
+                </li>
             </ul>
         </nav>
 
@@ -89,9 +103,18 @@
 
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="풍경사진 1" class="composition__photo composition__photo--p1">
-                        <img src="img/nat-2-large.jpg" alt="풍경사진 2" class="composition__photo composition__photo--p2">
-                        <img src="img/nat-3-large.jpg" alt="풍경사진 3" class="composition__photo composition__photo--p3">
+
+                        <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw, 18.75em"
+                            src="img/nat-1-large.jpg" alt="풍경사진 1" class="composition__photo composition__photo--p1">
+
+
+                        <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw, 18.75em"
+                            src="img/nat-2-large.jpg" alt="풍경사진 2" class="composition__photo composition__photo--p2">
+
+
+                        <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" sizes="(max-width:56.25em) 20vw, (max-width:37.5em) 30vw, 18.75em"
+                            src="img/nat-3-large.jpg" alt="풍경사진 3" class="composition__photo composition__photo--p3">
+
                     </div>
                 </div>
 
@@ -402,27 +425,45 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+
+            <picture class="footer__logo">
+                <source srcset="img/logo-green-small-1x.png 1x,img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" src="img/logo-green-small-2x.png" alt="Full Logo">
+            </picture>
+
         </div>
         <div class="row">
             <div class="col-1-of-2">
                 <div class="footer__navigation">
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Company</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Carrers</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Privacy policy</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Company</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Contact us</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Carrers</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Privacy policy</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="#" class="footer__link">Terms</a>
+                        </li>
                     </ul>
                 </div>
 
             </div>
             <div class="col-1-of-2">
                 <p class="footer__copyright">
-                        Built by <a href="#" class="footer__link">JONAS SCHMEDTMANN</a> for his online course ADVANCED CSS AND SASS. Copyright © by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!
+                    Built by
+                    <a href="#" class="footer__link">JONAS SCHMEDTMANN</a> for his online course ADVANCED CSS AND SASS. Copyright © by Jonas Schmedtmann.
+                    You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as
+                    your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!
                 </p>
             </div>
-            
+
         </div>
     </footer>
 
@@ -437,7 +478,13 @@
                 <h2 class="heading-secondary">Start booking now</h2>
                 <h3 class="heading-tertiary">Important &ndash; Pleace read these terms before booking</h3>
                 <p class="popup__text u-margin-bottom-medium u-margin-top-small">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et leo duis ut diam. Quam quisque id diam vel quam elementum pulvinar. Sed sed risus pretium quam vulputate. Netus et malesuada fames ac. Nulla facilisi morbi tempus iaculis urna id. Risus sed vulputate odio ut enim blandit volutpat maecenas. Nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus. Egestas quis ipsum suspendisse ultrices. At consectetur lorem donec massa sapien. Placerat in egestas erat imperdiet sed. Senectus et netus et malesuada fames ac turpis egestas sed. Commodo nulla facilisi nullam vehicula ipsum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Et leo duis ut diam. Quam quisque id diam vel quam elementum pulvinar. Sed sed risus pretium quam vulputate.
+                    Netus et malesuada fames ac. Nulla facilisi morbi tempus iaculis urna id. Risus sed vulputate odio ut
+                    enim blandit volutpat maecenas. Nulla malesuada pellentesque elit eget gravida cum sociis natoque penatibus.
+                    Egestas quis ipsum suspendisse ultrices. At consectetur lorem donec massa sapien. Placerat in egestas
+                    erat imperdiet sed. Senectus et netus et malesuada fames ac turpis egestas sed. Commodo nulla facilisi
+                    nullam vehicula ipsum.
                 </p>
                 <a href="#" class="btn btn--green">Book now</a>
             </div>
